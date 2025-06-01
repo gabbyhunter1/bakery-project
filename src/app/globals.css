@@ -3,19 +3,116 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #f8f8f2;
   --foreground: #171717;
+  --pink: #ffa7ee;
+  --blue: #147c98;
+  --dark: #112229;
+  --ulu-curve: cubic-bezier(.28, .71, 0, .98);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+::selection {
+  background: var(--pink);
 }
+
+::-moz-selection {
+  background: var(--pink);
+}
+
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+}
+
+h1, h2 {
+  line-height: .9;
+}
+
+.section-padding {
+  padding: 80px 4vw;
+}
+
+.arch-borders {
+  border-radius: 500px 500px 5rem 5rem;
+}
+
+.arches-animation {
+  animation: marquee-left 40s infinite linear;
+}
+
+.text-shadow-blue {
+  text-shadow: 1px 1px 0 #147c98, -1px 1px 0 #147c98, -1px -1px 0 #147c98, 1px -1px 0 #147c98;
+}
+
+span {
+  line-height: .9;
+}
+
+p {
+  line-height: 1.25;
+}
+
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-left {
+  animation: marquee-left 30s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-right 30s linear infinite;
+}
+
+/* Style divs without any class - colored */
+.marquee > div:not([class]) {
+  margin: 0 2rem;
+  font-size: 8rem;
+  font-weight: bold;
+  white-space: nowrap;
+  color: #147c98;
+  line-height: 1.1;
+}
+
+/* Style divs with "shadowed" class */
+.marquee > div.shadowed {
+  margin: 0 2rem;
+  font-size: 8rem;
+  line-height: 1.1;
+  font-weight: bold;
+  white-space: nowrap;
+  text-shadow: 1px 1px 0 #147c98,
+  -1px 1px 0 #147c98,
+  -1px -1px 0 #147c98,
+  1px -1px 0 #147c98;
+}
+
+.bestseller-animated-button {
+  width: 200%;
+  aspect-ratio: 1;
+  position: absolute;
+  top: var(--mouse-y, 50%);
+  left: var(--mouse-x, 50%);
+  border-radius: 1000px;
+  transform-origin: center;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.8s var(--ulu-curve);
+  z-index: 1;
 }
