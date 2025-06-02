@@ -1,6 +1,5 @@
 'use client';
 
-// contexts/CartContext.tsx
 import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 import { CartContextType, CartItem } from '@/types/cart';
 
@@ -32,12 +31,16 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
     }
   }, []);
 
-  // ✅ Save cart to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(items));
   }, [items]);
 
-  const addItem = (goodsId: number, quantity: number, name: string, price: number) => {
+  const addItem = (goodsId: number, quantity: number, name?: string, price?: number) => {
+    if (name === undefined || price === undefined) {
+      console.warn('Cannot add item without name and price');
+      return;
+    }
+
     setItems(prevItems => {
       const existingItem = prevItems.find(item => item.goodsId === goodsId);
       if (existingItem) {
@@ -69,16 +72,14 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   const decreaseQuantity = (goodsId: number, quantity: number = 1) => {
     setItems(prevItems => {
       const existingItem = prevItems.find(item => item.goodsId === goodsId);
-      if (!existingItem) return prevItems; // Item doesn't exist, no change
+      if (!existingItem) return prevItems;
 
       const newQuantity = existingItem.quantity - quantity;
 
       if (newQuantity <= 0) {
-        // Remove item if quantity becomes 0 or negative
         return prevItems.filter(item => item.goodsId !== goodsId);
       }
 
-      // Update with new decreased quantity
       return prevItems.map(item => (item.goodsId === goodsId ? { ...item, quantity: newQuantity } : item));
     });
   };

@@ -1,50 +1,19 @@
 'use client';
 
 import React, { Fragment, useEffect, useRef } from 'react';
-import { AnimatePresence, motion, useIsomorphicLayoutEffect } from 'framer-motion';
-import { OrdersResponse } from '@/types/product-types';
+import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 import { useCart } from '@/app/contexts/cart-context';
 import Button from '@/components/button';
 import { animate, KeyframeOptions } from 'motion';
 import { useInView } from 'motion/react';
 
-const Modal = ({ orders }: { orders: OrdersResponse }) => {
-  const { items, updateQuantity, decreaseQuantity, removeItem, clearCart, getTotalItems, calculateTotalPrice } = useCart();
+const Modal = () => {
+  const { items, updateQuantity, removeItem, calculateTotalPrice } = useCart();
 
-  const jsonToSend = items.map(({ goodsId, quantity }) => ({ goodsId, quantity }));
-
-  const handleCreateOrder = async () => {
-    if (items.length === 0) {
-      return;
-    }
-
-    const orderPayload = {
-      id: 3,
-      nameCustomer: 'string',
-      address: 'string',
-      phoneCustomer: 'string',
-      dateCustomer: new Date().toISOString(),
-      items: jsonToSend,
-    };
-
-    try {
-      const response = await fetch(`http://localhost:8080/api/orders`, {
-        method: 'POST',
-        headers: {
-          Accept: '*/*',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(orderPayload),
-      });
-    } catch (error) {
-      console.error('POST request failed:', error);
-    }
-  };
-
-  const handleClearCart = () => {
-    clearCart();
-  };
+  // const handleClearCart = () => {
+  //   clearCart();
+  // };
 
   const handleRemoveItem = (id: number) => {
     removeItem(id);
@@ -57,7 +26,7 @@ const Modal = ({ orders }: { orders: OrdersResponse }) => {
       <div className="mt-6 flex flex-col justify-between flex-grow">
         <div data-lenis-prevent={''} className="flex flex-col gap-4 h-[68dvh] sm:h-[75dvh] overflow-y-auto">
           <AnimatePresence>
-            {items.map((item, index) => (
+            {items.map(item => (
               <Fragment key={item.goodsId}>
                 <motion.div className="mr-4 mb-8" initial={{ x: '0%' }} exit={{ x: '100%' }} transition={{ duration: 0.2 }}>
                   <div className="flex gap-4 items-start">
@@ -105,7 +74,6 @@ const Modal = ({ orders }: { orders: OrdersResponse }) => {
         </div>
 
         <Button
-          onClick={handleCreateOrder}
           className={'w-full mb-10 py-5 px-4 border-[var(--pink)] !font-black bg-[var(--pink)]'}
           animationColor={'bg-[var(--background)]'}
           text={
@@ -114,7 +82,6 @@ const Modal = ({ orders }: { orders: OrdersResponse }) => {
             </>
           }
         />
-        {/*<AnimatedCounter from={0} to={totalPrice} />*/}
       </div>
     </div>
   );

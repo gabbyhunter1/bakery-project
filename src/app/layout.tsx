@@ -1,12 +1,8 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import ReactLenis from 'lenis/react';
 import localFont from 'next/font/local';
-import { Inter } from 'next/font/google';
 import { CartProvider } from '@/app/contexts/cart-context';
-
-const inter = Inter({ subsets: ['latin', 'cyrillic'] });
 
 const ApfelGrotezk = localFont({
   src: [
@@ -27,16 +23,6 @@ const ApfelGrotezk = localFont({
       weight: '900',
     },
   ],
-});
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {

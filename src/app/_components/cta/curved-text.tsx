@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { MotionValue } from 'motion';
 
 const CurvedText = () => {
   const ref = useRef(null);

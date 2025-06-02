@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Button from '@/components/button';
 import { useCart } from '@/app/contexts/cart-context';
 import { useState } from 'react';
-import { Slide, toast, ToastContainer } from 'react-toastify';
+import { Slide, toast } from 'react-toastify';
 
 const BestsellerDisplay = ({
   style = 'default',
@@ -14,14 +14,17 @@ const BestsellerDisplay = ({
   price,
 }: {
   style?: 'default' | 'arch';
-  id: number;
-  title: string;
-  description?: string;
-  price: number;
+  id: number | undefined;
+  title: string | undefined;
+  description?: string | undefined;
+  price: number | undefined;
 }) => {
-  const { items, addItem, updateQuantity, decreaseQuantity, removeItem, clearCart, getTotalItems } = useCart();
-
+  const { addItem } = useCart();
   const [quantity, setQuantity] = useState<number>(0);
+
+  if (id === undefined) {
+    return null;
+  }
 
   const handleAddToCart = (quantity: number) => {
     if (quantity == 0) {
@@ -60,7 +63,7 @@ const BestsellerDisplay = ({
         <Image src={'/cookie.webp'} alt={'cookie'} fill />
       </div>
       <div className="flex flex-col gap-2">
-        <h3 className="text-2xl font-black leading-[.9]">{title.toUpperCase()}</h3>
+        <h3 className="text-2xl font-black leading-[.9]">{title?.toUpperCase()}</h3>
         <p>{description}</p>
       </div>
 

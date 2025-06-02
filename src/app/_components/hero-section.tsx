@@ -2,12 +2,11 @@
 
 import React, { useRef } from 'react';
 import Image from 'next/image';
-import { motion, useMotionValueEvent, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import WordsReveal from '@/components/WordsReveal';
 
 const HeroSection = () => {
   const containerRef = useRef(null);
-  const headerRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -15,7 +14,6 @@ const HeroSection = () => {
   });
 
   const borderRadius = useTransform(scrollYProgress, [0, 1], ['0%', '5rem']);
-  const imageY = useTransform(scrollYProgress, [0, 1], ['0%', '70%']);
   const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.3]);
   const headerY = useTransform(scrollYProgress, [0, 1], ['0%', '-40%']);
   const stickerY = useTransform(scrollYProgress, [0, 1], ['0', '-90%']);

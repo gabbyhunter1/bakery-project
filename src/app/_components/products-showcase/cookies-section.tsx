@@ -12,7 +12,6 @@ const CookiesSection = ({ products }: { products: ProductsResponse }) => {
   const cookies = products.slice(0, 6);
   const cakes = products.slice(7);
 
-  // Parent container animation
   const containerVariants = {
     hidden: {},
     visible: {
@@ -27,7 +26,6 @@ const CookiesSection = ({ products }: { products: ProductsResponse }) => {
     },
   };
 
-  // Each image animation
   const itemVariants = {
     hidden: { y: '100%', rotate: '15deg' },
     visible: { y: 0, rotate: '0deg', transition: { duration: 0.4, ease: 'easeOut' } },
@@ -36,7 +34,6 @@ const CookiesSection = ({ products }: { products: ProductsResponse }) => {
 
   return (
     <>
-      {/* Buttons */}
       <div className="flex gap-4 mb-16">
         <Button
           onClick={() => setActiveSection('cookies')}
@@ -52,7 +49,6 @@ const CookiesSection = ({ products }: { products: ProductsResponse }) => {
         />
       </div>
 
-      {/* Animated Image Section */}
       <AnimatePresence mode="wait">
         <motion.div
           key={activeSection}

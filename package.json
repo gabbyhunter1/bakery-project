@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "tsc && next build",
     "start": "next start",
     "lint": "next lint",
     "generate:api-types": "openapi-typescript http://localhost:8080/v3/api-docs -o src/types/api.d.ts"

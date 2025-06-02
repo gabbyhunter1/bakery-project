@@ -1,20 +1,21 @@
 'use client';
 
 import React, { useRef, useState } from 'react';
-import { useScroll, useTransform } from 'framer-motion';
 import CurvedText from '@/app/_components/cta/curved-text';
 import Image from 'next/image';
 import { motion } from 'motion/react';
 
 const CtaSection = () => {
-  const orderRef = useRef(null);
+  const orderRef = useRef<HTMLDivElement>(null);
   const [coords, setCoords] = useState({ x: '0px', y: '0px' });
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    const rect = orderRef.current.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-    setCoords({ x: `${x}px`, y: `${y}px` });
+    const rect = orderRef.current?.getBoundingClientRect();
+    if (rect) {
+      const x = event.clientX - rect?.left;
+      const y = event.clientY - rect.top;
+      setCoords({ x: `${x}px`, y: `${y}px` });
+    }
   };
 
   return (
@@ -27,11 +28,13 @@ const CtaSection = () => {
               ref={orderRef}
               onMouseMove={handleMouseMove}
               className="absolute z-10 rounded-full ring-8 ring-[var(--background)] overflow-hidden left-1/2 bottom-[-20%] border-[6px] border-[var(--pink)] mt-4 font-medium bg-[var(--pink)] flex justify-center items-center leading-[.9]"
-              style={{
-                '--mouse-x': coords.x,
-                '--mouse-y': coords.y,
-                translateX: '-50%',
-              }}
+              style={
+                {
+                  '--mouse-x': coords.x,
+                  '--mouse-y': coords.y,
+                  translateX: '-50%',
+                } as React.CSSProperties
+              }
               whileHover="hover"
               initial="rest"
               animate="rest">

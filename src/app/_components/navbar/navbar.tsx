@@ -3,10 +3,6 @@
 import React, { ReactNode, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'motion/react';
-import Image from 'next/image';
-import { createPortal } from 'react-dom';
-import CartModal from '@/app/_components/navbar/cart-modal';
-import ModalWrapper from '@/app/_components/navbar/modal-wrapper';
 
 const Navbar = ({ children }: { children: ReactNode }) => {
   const [isHeroVisible, setIsHeroVisible] = useState<boolean | null>(null);
@@ -53,7 +49,7 @@ const Navbar = ({ children }: { children: ReactNode }) => {
 
       <div className="relative flex items-center justify-between">
         {/* Staggered Logo with Sliding Effect */}
-        <Link href={'/public'} className="font-bold text-5xl overflow-hidden relative">
+        <Link href={'/'} className="font-bold text-5xl overflow-hidden relative">
           {/* White Logo (slides down and hides) */}
           <motion.div
             className="absolute text-white"
@@ -85,7 +81,7 @@ const Navbar = ({ children }: { children: ReactNode }) => {
         {/* Navigation Links */}
         <div className="flex gap-16 font-bold text-xl">
           <div className="flex gap-16 max-lg:hidden">
-            {navItems.map((item, i) => (
+            {navItems.map(item => (
               <motion.a
                 key={item}
                 href="#"

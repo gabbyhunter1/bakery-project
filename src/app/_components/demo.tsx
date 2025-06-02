@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'motion/react';
 
@@ -14,7 +14,7 @@ interface LineRevealProps {
   triggerOnce?: boolean;
 }
 
-const LineReveal: React.FC<LineRevealProps> = ({ text, className = '', delay = 0.4, duration = 0.8, stagger = 0.1, triggerOnce = true }) => {
+const LineReveal: React.FC<LineRevealProps> = ({ text, className = '', delay = 0.4, stagger = 0.1, triggerOnce = true }) => {
   const [lines, setLines] = useState<string[]>([]);
   const containerRef = useRef<HTMLHeadingElement>(null);
   const hiddenRef = useRef<HTMLDivElement>(null);
@@ -23,7 +23,7 @@ const LineReveal: React.FC<LineRevealProps> = ({ text, className = '', delay = 0
     once: triggerOnce,
   });
 
-  const calculateLines = () => {
+  const calculateLines = useCallback(() => {
     if (!containerRef.current || !hiddenRef.current) return;
 
     const container = containerRef.current;
@@ -64,7 +64,7 @@ const LineReveal: React.FC<LineRevealProps> = ({ text, className = '', delay = 0
 
     hidden.removeChild(tempSpan);
     setLines(newLines);
-  };
+  }, [text]);
 
   useEffect(() => {
     calculateLines();

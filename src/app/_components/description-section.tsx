@@ -12,33 +12,8 @@ const DescriptionSection = ({ heading, description }: { heading: string; descrip
 
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '-80%']);
-  const CakeImage = motion.create(Image);
 
   const revealDelay = 0.4;
-
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.05,
-        delayChildren: revealDelay,
-      },
-    },
-  };
-
-  const wordVariants = {
-    hidden: { y: '100%', rotate: 12 },
-    visible: {
-      y: '0%',
-      rotate: 0,
-      transition: {
-        duration: 0.5,
-        ease: 'easeOut',
-      },
-    },
-  };
-
-  const words = groupWords(heading, 2);
 
   return (
     <section className="text-[#147c98] relative flex max-md:flex-col max-md:gap-4 gap-10 section-padding">
@@ -59,15 +34,6 @@ const DescriptionSection = ({ heading, description }: { heading: string; descrip
       </motion.div>
     </section>
   );
-};
-
-const groupWords = (text: string, groupSize = 2) => {
-  const words = text.split(' ');
-  const groups = [];
-  for (let i = 0; i < words.length; i += groupSize) {
-    groups.push(words.slice(i, i + groupSize).join(' '));
-  }
-  return groups;
 };
 
 export default DescriptionSection;

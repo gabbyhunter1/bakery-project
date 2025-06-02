@@ -37,6 +37,7 @@ const ArchesDisplay = () => {
 
   const archesArray = [
     <motion.div
+      key={crypto.randomUUID()}
       ref={archRef}
       variants={containerVariants}
       initial="hidden"

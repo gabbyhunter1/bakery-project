@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react';
 
 const AnimatedPath = () => {
   const controls = useAnimation();
-  const pathRef = useRef(null);
+  const pathRef = useRef<SVGPathElement>(null);
 
   useEffect(() => {
     const pathEl = pathRef.current;

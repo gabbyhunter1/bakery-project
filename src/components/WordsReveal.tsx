@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { motion } from 'framer-motion';
 
 interface WordRevealProps {
   text: string;
@@ -13,15 +13,7 @@ interface WordRevealProps {
   triggerOnce?: boolean;
 }
 
-const WordsReveal: React.FC<WordRevealProps> = ({
-  text,
-  className = '',
-  delay = 0,
-  duration = 0.6,
-  stagger = 0.05,
-  threshold = 0.5,
-  triggerOnce = true,
-}) => {
+const WordsReveal: React.FC<WordRevealProps> = ({ text, className = '', delay = 0, duration = 0.6, stagger = 0.05 }) => {
   const [wordPositions, setWordPositions] = useState<
     Array<{
       word: string;
@@ -33,7 +25,7 @@ const WordsReveal: React.FC<WordRevealProps> = ({
   const containerRef = useRef<HTMLHeadingElement>(null);
   const hiddenRef = useRef<HTMLDivElement>(null);
 
-  const calculateWordPositions = () => {
+  const calculateWordPositions = useCallback(() => {
     if (!containerRef.current || !hiddenRef.current) return;
 
     const container = containerRef.current;
@@ -91,7 +83,7 @@ const WordsReveal: React.FC<WordRevealProps> = ({
     hidden.removeChild(tempSpan);
     setWordPositions(positions);
     setIsReady(true);
-  };
+  }, [text]);
 
   useEffect(() => {
     setIsReady(false);
@@ -152,7 +144,7 @@ const WordsReveal: React.FC<WordRevealProps> = ({
 
           return (
             <span key={lineIndex} className="block overflow-hidden">
-              {wordsInLine.map((wordPos, index) => (
+              {wordsInLine.map(wordPos => (
                 <React.Fragment key={wordPos.wordIndex}>
                   <motion.span className="inline-block mr-[.3em] origin-top-left" variants={createWordVariants(wordPos.wordIndex)}>
                     {wordPos.word}
