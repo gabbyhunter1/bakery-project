@@ -37,7 +37,6 @@ const WordsReveal: React.FC<WordRevealProps> = ({ text, className = '', delay = 
     hidden.style.width = `${containerWidth}px`;
 
     const words = text.split(' ');
-    const lines: string[] = [];
     const positions: Array<{
       word: string;
       lineIndex: number;
@@ -61,7 +60,6 @@ const WordsReveal: React.FC<WordRevealProps> = ({ text, className = '', delay = 
 
       if (tempSpan.offsetWidth > containerWidth && currentLine) {
         // Line is too wide, start new line
-        lines.push(currentLine);
         currentLine = words[i];
         currentLineIndex++;
       } else {
@@ -74,10 +72,6 @@ const WordsReveal: React.FC<WordRevealProps> = ({ text, className = '', delay = 
         lineIndex: currentLineIndex,
         wordIndex: i,
       });
-    }
-
-    if (currentLine) {
-      lines.push(currentLine);
     }
 
     hidden.removeChild(tempSpan);

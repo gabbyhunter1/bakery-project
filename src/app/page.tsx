@@ -8,11 +8,11 @@ import TestimonialsSection from '@/app/_components/testimonials/testimonials-sec
 import CtaSection from '@/app/_components/cta/cta-section';
 import NewsletterSection from '@/app/_components/newsletter/newsletter-section';
 import Footer from '@/app/_components/footer/footer';
-import ProductsShowcaseSection from '@/app/_components/products-showcase/products-showcase-section';
 import ModalWrapper from '@/app/_components/navbar/modal/modal-wrapper';
 import CartModal from '@/app/_components/navbar/modal/cart-modal';
 import React from 'react';
 import { ToastContainer } from 'react-toastify';
+import ProductsSection from '@/app/_components/products-showcase/products-section';
 
 export default function Home() {
   return (
@@ -34,15 +34,14 @@ export default function Home() {
         />
         <Bestsellers />
         <ArchesDisplay />
-        <ProductsShowcaseSection />
+        <ProductsSection />
         <TestimonialsSection />
         <CtaSection />
         <NewsletterSection />
-        {/*<Spacefiller />*/}
       </main>
-      <footer className="">
-        <Footer />
-      </footer>
+
+      <Footer />
+
       <ToastContainer />
     </>
   );

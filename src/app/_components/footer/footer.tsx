@@ -4,7 +4,7 @@ const Footer = () => {
   const footerHeight = 650;
 
   return (
-    <div className={`relative -z-10`} style={{ height: `${footerHeight}px` }}>
+    <footer className={`relative -z-10`} style={{ height: `${footerHeight}px` }}>
       <div
         className={`bg-[var(--blue)] relative h-[calc(100vh+${footerHeight}px)] -top-[100vh]`}
         style={{ height: `calc(100vh + ${footerHeight}px)` }}>
@@ -16,7 +16,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

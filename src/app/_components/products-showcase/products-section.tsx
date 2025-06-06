@@ -4,9 +4,9 @@ import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import BestsellerDisplay from '@/app/_components/bestsellers/bestseller-display';
 import Button from '@/components/button';
-import { ProductsResponse } from '@/types/product-types';
+import { products } from '@/app/data/products';
 
-const CookiesSection = ({ products }: { products: ProductsResponse }) => {
+const ProductsSection = () => {
   const [activeSection, setActiveSection] = useState<'cookies' | 'cakes'>('cookies');
 
   const cookies = products.slice(0, 6);
@@ -79,4 +79,4 @@ const CookiesSection = ({ products }: { products: ProductsResponse }) => {
   );
 };
 
-export default CookiesSection;
+export default ProductsSection;
