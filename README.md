@@ -67,7 +67,7 @@ This project is a frontend-only recreation of the [Bernice Bakery](https://berni
 
 Important Notes:
 
-	•  This is not an official or affiliated version of the Bernice Bakery website.
+	•  This is NOT an official or affiliated version of the Bernice Bakery website.
 	•  All design credit belongs to the original creators at Bernice Bakery.
 	•  This project is shared for educational and non-commercial purposes only.
 	•  A clear link to the original site is provided out of respect and transparency.
@@ -119,7 +119,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <!-- CONTACT -->
 ## Contact
 
-Vitaliy Balabanov - [@mjackson50](https://x.com/mjackson50_) - vitaliybalabanov50@gmail.com
+Vitaliy Balabanov - [@mjackson50](https://x.com/mjackson50_) - vitalybalabanov50@gmail.com
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
