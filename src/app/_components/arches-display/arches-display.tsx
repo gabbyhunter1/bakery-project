@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef } from 'react';
-import LineReveal from '@/app/_components/demo';
+import LineReveal from '@/app/_components/line-reveal';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Arch from '@/app/_components/arches-display/arch';
 import { useInView } from 'motion/react';

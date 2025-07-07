@@ -3,7 +3,7 @@
 import React, { useRef } from 'react';
 import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import WordsReveal from '@/components/WordsReveal';
+import WordsReveal from '@/components/words-reveal';
 
 const HeroSection = () => {
   const containerRef = useRef(null);

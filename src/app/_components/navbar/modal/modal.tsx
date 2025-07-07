@@ -11,10 +11,6 @@ import { useInView } from 'motion/react';
 const Modal = () => {
   const { items, updateQuantity, removeItem, calculateTotalPrice } = useCart();
 
-  // const handleClearCart = () => {
-  //   clearCart();
-  // };
-
   const handleRemoveItem = (id: number) => {
     removeItem(id);
   };

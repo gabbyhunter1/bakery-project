@@ -4,7 +4,7 @@ import { motion, useInView, useTransform } from 'motion/react';
 import React, { useRef } from 'react';
 import Image from 'next/image';
 import { useScroll } from 'framer-motion';
-import LineReveal from '@/app/_components/demo';
+import LineReveal from '@/app/_components/line-reveal';
 
 const DescriptionSection = ({ heading, description }: { heading: string; description: string }) => {
   const ref = useRef(null);

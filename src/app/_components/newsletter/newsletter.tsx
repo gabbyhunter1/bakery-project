@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef } from 'react';
-import LineReveal from '@/app/_components/demo';
+import LineReveal from '@/app/_components/line-reveal';
 import Button from '@/components/button';
 import { motion, useTransform } from 'motion/react';
 import Image from 'next/image';
