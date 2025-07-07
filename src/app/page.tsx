@@ -17,12 +17,14 @@ import ProductsSection from '@/app/_components/products-showcase/products-sectio
 export default function Home() {
   return (
     <>
-      <main className="bg-[var(--background)]" style={{ borderRadius: '0 0 1.5rem 1.5rem' }}>
+      <header>
         <Navbar>
           <CartModal>
             <ModalWrapper />
           </CartModal>
         </Navbar>
+      </header>
+      <main className="bg-[var(--background)]" style={{ borderRadius: '0 0 1.5rem 1.5rem' }}>
         <AnimatedPath />
         <HeroSection />
         <DescriptionSection
