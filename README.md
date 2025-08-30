@@ -26,7 +26,7 @@
     <img src="src/app/favicon.ico" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Bernice Bakery Frontend Copy</h3>
+  <h3 align="center">Bernice Bakery Frontend Clone</h3>
 
   <p align="center">
     A frontend-only recreation of the Bernice Bakery website built for educational and non-commercial purposes.
