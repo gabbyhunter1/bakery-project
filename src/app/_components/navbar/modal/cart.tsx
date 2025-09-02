@@ -5,7 +5,7 @@ import { createPortal } from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useCart } from '@/app/contexts/cart-context';
 
-const CartModal = ({ children }: { children?: ReactNode }) => {
+const Cart = ({ children }: { children?: ReactNode }) => {
   const [showCart, setShowCart] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
@@ -107,4 +107,4 @@ const CartModal = ({ children }: { children?: ReactNode }) => {
   );
 };
 
-export default CartModal;
+export default Cart;

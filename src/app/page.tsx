@@ -8,8 +8,6 @@ import TestimonialsSection from '@/app/_components/testimonials/testimonials-sec
 import CtaSection from '@/app/_components/cta/cta-section';
 import NewsletterSection from '@/app/_components/newsletter/newsletter-section';
 import Footer from '@/app/_components/footer/footer';
-import ModalWrapper from '@/app/_components/navbar/modal/modal-wrapper';
-import CartModal from '@/app/_components/navbar/modal/cart-modal';
 import React from 'react';
 import { ToastContainer } from 'react-toastify';
 import ProductsSection from '@/app/_components/products-showcase/products-section';
@@ -18,11 +16,7 @@ export default function Home() {
   return (
     <>
       <header>
-        <Navbar>
-          <CartModal>
-            <ModalWrapper />
-          </CartModal>
-        </Navbar>
+        <Navbar />
       </header>
       <main className="bg-[var(--background)]" style={{ borderRadius: '0 0 1.5rem 1.5rem' }}>
         <AnimatedPath />

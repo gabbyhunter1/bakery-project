@@ -3,8 +3,10 @@
 import React, { ReactNode, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'motion/react';
+import Cart from '@/app/_components/navbar/modal/cart';
+import Modal from '@/app/_components/navbar/modal/modal';
 
-const Navbar = ({ children }: { children: ReactNode }) => {
+const Navbar = () => {
   const [isHeroVisible, setIsHeroVisible] = useState<boolean | null>(null);
 
   useEffect(() => {
@@ -108,7 +110,10 @@ const Navbar = ({ children }: { children: ReactNode }) => {
               ease: 'easeOut',
             }}
             className="flex gap-5">
-            {children}
+            <Cart>
+              <Modal />
+            </Cart>
+            {/*Search Icon*/}
             <svg className="text-black w-6 h-6" role="presentation" viewBox="0 0 18 17">
               <g transform="translate(1 1)" stroke="currentColor" fill="none" fillRule="evenodd" strokeLinecap="square">
                 <path d="M16 16l-5.0752-5.0752"></path>
