@@ -61,7 +61,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-<img src="https://github.com/user-attachments/assets/6df01f1f-b5be-4507-8f2c-93d315169efe" alt="Website Picture">
+<img src="https://github.com/user-attachments/assets/0a065f4b-2c39-432a-a167-3cb7fcf06bc9" alt="Website Picture">
 
 This project is a frontend-only recreation of the [Bernice Bakery](https://bernicebakery.com/) website, built as a personal learning exercise to improve my Next.js(React), Tailwind and motion design skills using Lenis for smooth scroll and Motion(prev Framer Motion) for animations, mixed with simple CSS animations. The goal was to replicate the visual layout and user interface of the [original site](https://bernicebakery.com/) without using any backend logic.
 
