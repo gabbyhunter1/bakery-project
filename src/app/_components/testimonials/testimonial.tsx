@@ -3,7 +3,8 @@ import Image from 'next/image';
 
 const Testimonial = ({ style = 'light' }: { style?: 'light' | 'dark' }) => {
   return (
-    <div className={`${style === 'light' ? `bg-[var(--blue)]` : `bg-[var(--dark)]`} p-12 w-[520px] mr-[4vw] rounded-[3rem] text-[var(--background)]`}>
+    <div
+      className={`${style === 'light' ? `bg-[var(--blue)]` : `bg-[var(--dark)]`} md:p-8 p-12 md:w-[420px] w-[520px] mr-[4vw] rounded-[3rem] text-[var(--background)]`}>
       <h3 className="leading-[.6] text-[5rem] font-bold">‘’</h3>
       <p className="mb-4">
         Brand puts forth the kind of sweets that take you back to childhood. Nothing too complex, but everything is well done. The tiered cakes are
