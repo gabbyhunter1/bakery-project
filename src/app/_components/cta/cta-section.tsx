@@ -62,8 +62,8 @@ const CtaSection = () => {
 
       <div className="max-sm:w-full w-[40%] text-center">
         <p className="max-sm:mt-0 my-4">
-          Ordering a cake at Bernice Bakery is a seamless and personalized experience. Customers can either visit the bakery in person, over the phone
-          or more conveniently, place an order online.
+          Ordering a cake at Brand is a seamless and personalized experience. Customers can either visit the bakery in person, over the phone or more
+          conveniently, place an order online.
         </p>
         <p>
           The process begins with selecting from our seasonal variety of cake flavors and then choosing your selected day and time for pickup. Keep in

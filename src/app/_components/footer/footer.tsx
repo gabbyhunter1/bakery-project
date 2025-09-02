@@ -12,7 +12,7 @@ const Footer = () => {
           className={`h-[${footerHeight}px] sticky top-[calc(100vh-600px)]`}
           style={{ height: `${footerHeight}px`, top: `calc(100vh - ${footerHeight}px)` }}>
           <div className="flex items-end w-full justify-center h-full">
-            <p className="text-[23vw] text-white font-black">BERNICE</p>
+            <p className="text-[23vw] text-white font-black">BRAND</p>
           </div>
         </div>
       </div>

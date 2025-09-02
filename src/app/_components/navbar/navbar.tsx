@@ -30,7 +30,7 @@ const Navbar = ({ children }: { children: ReactNode }) => {
     };
   }, []);
 
-  const logoText = 'BERNICE';
+  const logoText = 'BRAND';
   const navItems = ['COOKIES', 'CAKES', 'ABOUT', 'CONTACT', 'FRANÇAIS'];
 
   return (

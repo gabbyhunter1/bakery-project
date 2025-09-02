@@ -24,7 +24,7 @@ const HeroSection = () => {
     <section id={'hero-section'}>
       <motion.div ref={containerRef} className="relative w-screen max-md:h-[75vh] h-screen overflow-hidden bg-black" style={{ borderRadius }}>
         <MotionImage
-          src={'/bernicefrontcounter.png'}
+          src={'/frontcounter.png'}
           alt={'d'}
           priority
           fill
@@ -35,7 +35,7 @@ const HeroSection = () => {
           <div className="relative flex max-md:pb-10 max-md:flex-col max-md:justify-end max-md:items-start max-md:gap-8 items-center justify-between w-full">
             <div className="relative w-[85%]">
               <WordsReveal
-                text={'A BAKING LOVE AFFAIR'}
+                text={'LIFE IS BAKING'}
                 className="max-md:text-[15vw] text-[12vw] leading-none font-black text-white"
                 delay={0.1}
                 duration={0.5}

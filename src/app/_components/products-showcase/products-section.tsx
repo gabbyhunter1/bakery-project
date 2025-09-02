@@ -33,7 +33,7 @@ const ProductsSection = () => {
   };
 
   return (
-    <>
+    <section className="section-padding">
       <div className="flex gap-4 mb-16">
         <Button
           onClick={() => setActiveSection('cookies')}
@@ -75,7 +75,7 @@ const ProductsSection = () => {
               ))}
         </motion.div>
       </AnimatePresence>
-    </>
+    </section>
   );
 };
 
