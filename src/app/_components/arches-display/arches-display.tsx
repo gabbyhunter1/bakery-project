@@ -102,13 +102,13 @@ const ArchesDisplay = () => {
 
   return (
     <section className="my-12">
-      <motion.div ref={ref} style={{ y }} className="relative">
+      <motion.h2 ref={ref} style={{ y }} className="relative">
         <LineReveal
           text="THE BEST THINGS IN LIFE ARE SWEET"
           className={'text-4xl px-4 sm:text-5xl md:text-6xl lg:text-8xl text-center font-black leading-[.9]'}
           triggerOnce={true}
         />
-      </motion.div>
+      </motion.h2>
       <div className="overflow-hidden">
         <motion.div className="relative w-max overflow-x-hidden max-sm:mt-8 mt-20">{archesArray[0]}</motion.div>
       </div>

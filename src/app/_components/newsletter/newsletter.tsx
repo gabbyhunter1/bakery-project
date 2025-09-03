@@ -19,11 +19,13 @@ const Newsletter = () => {
       ref={ref}
       className="relative max-sm:w-full sm:min-w-[600px] w-[65%] mx-auto rounded-[2rem] bg-[var(--blue)] px-8 py-16 flex flex-col items-center justify-center">
       <div className="w-full max-w-2xl">
-        <LineReveal
-          delay={0.2}
-          text={'GET 15% OFF YOUR FIRST ORDER'}
-          className="max-sm:text-3xl sm:text-5xl md:text-6xl text-center font-black text-white"
-        />
+        <h2>
+          <LineReveal
+            delay={0.2}
+            text={'GET 15% OFF YOUR FIRST ORDER'}
+            className="max-sm:text-3xl sm:text-5xl md:text-6xl text-center font-black text-white"
+          />
+        </h2>
       </div>
       <p className="text-white my-10">Subscribe to our newsletter and get 15% off your first purchase!</p>
       <div className="flex justify-center items-center gap-2 min-w-[350px]">

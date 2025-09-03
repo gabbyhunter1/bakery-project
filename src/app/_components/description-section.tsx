@@ -17,9 +17,9 @@ const DescriptionSection = ({ heading, description }: { heading: string; descrip
 
   return (
     <section className="text-[#147c98] relative flex max-md:flex-col max-md:gap-4 gap-10 section-padding">
-      <div className="font-black relative max-md:text-3xl max-md:w-full md:w-[calc(60%-1rem)] text-[4.2rem]">
+      <h2 className="font-black relative max-md:text-3xl max-md:w-full md:w-[calc(60%-1rem)] text-[4.2rem]">
         <LineReveal text={heading} />
-      </div>
+      </h2>
       <motion.p
         ref={ref}
         initial={{ opacity: 0, y: 30 }}

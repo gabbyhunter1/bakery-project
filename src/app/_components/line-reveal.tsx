@@ -101,7 +101,7 @@ const LineReveal: React.FC<LineRevealProps> = ({ text, className = '', delay = 0
 
   return (
     <>
-      <motion.h1
+      <motion.div
         ref={containerRef}
         className={`overflow-hidden ${className}`}
         variants={containerVariants}
@@ -114,7 +114,7 @@ const LineReveal: React.FC<LineRevealProps> = ({ text, className = '', delay = 0
             </motion.span>
           </span>
         ))}
-      </motion.h1>
+      </motion.div>
 
       {/* Hidden element for measuring text */}
       <div ref={hiddenRef} className={`fixed top-0 left-0 pointer-events-none opacity-0 ${className}`} style={{ zIndex: -1 }} aria-hidden="true" />

@@ -35,12 +35,14 @@ const ProductsSection = () => {
   return (
     <section className="section-padding">
       <div className="flex gap-4 mb-16">
+        <h2 className="sr-only">Cookies Tab</h2>
         <Button
           onClick={() => setActiveSection('cookies')}
           className={`px-8 py-4 ${activeSection === 'cookies' ? 'bg-[#112229] text-white ' : 'text-[#171717]'} hover:text-white border-[#112229] `}
           animationColor={'bg-[#112229]'}
           text={'COOKIES'}
         />
+        <h2 className="sr-only">Cakes Tab</h2>
         <Button
           onClick={() => setActiveSection('cakes')}
           className={`px-8 py-4 border-[var(--pink)] ${activeSection == 'cakes' ? 'bg-[var(--pink)]' : 'hover:text-white'}`}
